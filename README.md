@@ -1,60 +1,48 @@
-# A+ Landing Factory
+# Landing Factory — Magic Edition
 
-A config-driven React starter for producing **multiple genuinely different landing concepts** from one client brief, comparing them quickly, and promoting the winning direction to production.
+A reusable React/Vite landing-page factory for producing **distinct visual directions**, not recolored templates.
 
-## What is already inside
+## 10 live design worlds
 
-Three live directions share the same factual content but use different art direction:
+Use `?concept=` to switch directly:
 
-- `?concept=editorial` — premium, restrained, typography-led
-- `?concept=immersive` — dark, kinetic, high-impact
-- `?concept=conversion` — clear, evidence-led, conversion-first
+- `editorial` — quiet luxury / typography-led
+- `immersive` — 3D / kinetic / atmospheric
+- `conversion` — SaaS / evidence / dashboard proof
+- `brutalist` — raw / loud / anti-template
+- `bento` — modular / spotlight interaction
+- `glass` — luminous depth / 3D glass-like layers
+- `lifestyle` — warm editorial / image collage
+- `corporate` — premium B2B / restrained systems
+- `product` — realtime 3D product showcase
+- `portfolio` — kinetic creative portfolio
 
-The floating Factory switcher lets you move between them without a router.
+The default is `immersive`.
 
-## Stack
+## Real libraries and source components
 
-React 19 · TypeScript · Vite · Tailwind CSS 4 · Framer Motion · Radix Slot · Lucide · Cloudflare Pages
+This factory uses/adapts actual open-source work from Magic UI and Motion Primitives, plus GSAP, Lenis, Framer Motion, Three.js, React Three Fiber/Drei and the existing Radix/shadcn-style foundation. See [`THIRD_PARTY.md`](./THIRD_PARTY.md) for the licensing/source breakdown.
 
-The system follows a **shadcn/Radix primitive mindset** and uses custom motion/effect components selectively rather than turning the page into a component-library demo.
+React Bits is used as a reference/dependency-stack benchmark but is not vendored into the reusable factory because its current Commons Clause restricts redistribution of the components themselves.
 
-## Start a new landing
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then:
-
-1. Replace the facts in `src/config/brand.ts`.
-2. Add real brand assets under `public/`.
-3. Read `AGENTS.md` and `FACTORY.md`.
-4. Rebuild the three concepts around the actual brief; do not just recolor the demos.
-5. Run `npm run build` before shipping.
-
-## Cloudflare Pages
-
-Build command:
+Production build:
 
 ```bash
 npm run build
 ```
 
-Output directory:
+## Cloudflare Pages
 
-```text
-dist
-```
+- Framework preset: `Vite` (or None)
+- Build command: `npm run build`
+- Output directory: `dist`
+- Production branch: `main`
 
-Manual deploy (after Wrangler auth):
-
-```bash
-npm run cf:deploy
-```
-
-Or connect this repository directly to Cloudflare Pages and use the same build/output settings.
-
-## Why this exists
-
-The Factory is deliberately opinionated: define the design system first, keep accessibility and interaction quality above visual novelty, use motion with purpose, and create concepts that differ in composition and point of view — not merely gradients and colors.
+Every push to `main` can trigger a new Cloudflare Pages build.
