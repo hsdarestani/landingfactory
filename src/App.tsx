@@ -22,7 +22,7 @@ export default function App() {
     url.searchParams.set('concept', concept)
     window.history.replaceState({}, '', url)
     document.documentElement.dataset.concept = concept
-    window.scrollTo({ top: 0, behavior: 'instant' })
+    window.scrollTo({ top: 0, behavior: 'auto' })
   }, [concept])
 
   return (
